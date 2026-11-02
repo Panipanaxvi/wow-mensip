@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ily</title>
+</head>
+<body>
+  <audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+  <main class="mobile">
+    <div class="container">
+    <div id="halaman1" class="wow">
+        <h2 align="center">Hi, Sei River.</h2>
+        <img src="us.jpg">
+        <p>1 months together, and i always love you.</p>
+        <button type="button" onclick="pindah(2)">
+    Coba buka, jamsker gk
+</button>
+    </div>
+      
+    <div id="halaman2" class="page">
+        <h2>Let's see our story!</h2>
+
+      <div class="photo right">
+            <img src="a.png">
+            <img src="cie.jpg">
+        </div>
+
+        <div class="photo left">
+            <img src="b.png">
+        </div>
+
+        <div class="photo right">
+            <img src="c.png">
+        </div>
+      <div class="photo last">
+           <img src="d.png">
+    </div>
+
+        <button onclick="kembaliHalaman()">
+              previous
+       </button>
+      <button onclick="pindah(3)">
+            Next!
+      </button>
+    </div>
+        <div id="halaman3" class="page2" style="display:none;">
+            <h2>Happy mensiversary yang ke 1 bulan sayang.</h2>
+          <img src="anjay.png">
+            <p>ga kerasa ya sayang sekarang kita udah 1 bulan pacaran? tiap hari gua rasanya makin sayang sama lu, makin suka sama lu. i love you so much sayang, more than anything in this world. makasih ya udah hadir di hidup gua, makasih udah confess perasaan lu ke gua tanggal 3 oktobee kemarin. gua gapernah ga sayang lu, gua sayang bngt sama lu. gua gatau gimana kita kedepannya, gua bukan peramal. tapi, semoga kita bertahan lama ya sayang?</p>
+          <br>
+          <p>
+            kalo satu bulan ini gua ada bikin salah, gua minta maaf ya sayang :(.gua gatau apakah terkadamh candaan/perilaku gua bikin lu sakit hati atau ngga, tapi kalo emang ada, maafin gua ya? kalau gua ada salah, lu bisa tegur gua, lu bisa nasehatin gua. jangan lupa buat bilang ke gua klo ada sesuatu yang bikin lu ga enak sama gua, kita komunikasiin bareng bareng ya sayang??
+          </p>
+            <button onclick="pindah(2)">Previous</button>
+        </div>
+    </div>
+  </main>
+  <script>
+        let musikMulai = false;
+
+function pindah(nomor) {
+
+    document.querySelectorAll(".wow, .page").forEach(function(page) {
+        page.style.display = "none";
+    });
+
+    document.getElementById("halaman" + nomor).style.display = "block";
+  if (nomor === 2 && !musikMulai) {
+        const music = document.getElementById("bgMusic");
+
+        music.play();
+        musikMulai = true;
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+    }
+  </script>
+</body>
+  </html>
